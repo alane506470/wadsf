@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <package name = "default" extends = "struts-default">
+     
+      <action name = "register" 
+         class = "com.mxl.actions.UserAction" >
+         <result name = "input">/register.jsp</result>
+         <result>/register_success.jsp</result>
+      </action>
+       
+       <action name = "ce" 
+         class = "com.mxl.actions.RegisterAction" >
+         <result name = "input">/ce_register.jsp</result>
+         <result>/success.jsp</result>
+      </action>
+   </package>
+  
+
+</struts>
