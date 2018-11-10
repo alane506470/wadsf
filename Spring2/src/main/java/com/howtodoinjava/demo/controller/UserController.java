@@ -38,6 +38,7 @@ public class UserController {
           return mv;
           */
           model.addAttribute("Users", userService.list());
+          model.addAttribute("name", "Hello");
           return "editUsers";
     }
      

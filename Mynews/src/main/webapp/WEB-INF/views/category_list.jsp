@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="/Mynews/inputCategory">²K¥[Ãþ§O</a>
+
 <s:if test="#request.clist.size()!=0">
 	<table>
 		<tr>
@@ -28,7 +30,8 @@
 				</td>
 				
 				<td>
-					<img src="images/edt.gif"/>½s¿è
+					<a href="/Mynews/updateInput?category.id=<s:property value="#category.id"/>"><img src="images/edt.gif"/>½s¿è
+					<a href="/Mynews/updateInput?id=<s:property value="#category.id"/>"><img src="images/edt.gif"/>½s¿è
 					<img src="images/edt.gif"/>§R°£
 				</td>
 			</tr>

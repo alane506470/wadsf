@@ -16,7 +16,7 @@ public class CategoryServiceImpl implements CategoryService {
 	@Autowired
 	private CategoryDao categoryDao;
 	
-	 @Transactional (readOnly = true)
+	
 	public List<Category> selectListByTopId(int topId) {
 		// TODO Auto-generated method stub
 		   return categoryDao.selectListByTopId(topId);
@@ -27,9 +27,17 @@ public class CategoryServiceImpl implements CategoryService {
 		return categoryDao.test();
 	}
 
+	
 	public List<Category> list() {
 		// TODO Auto-generated method stub
 		return categoryDao.list();
+	}
+
+	public Void insertCategory(Category category) {
+		categoryDao.insertCategory(category);
+		return null;
+		// TODO Auto-generated method stub
+		
 	}
 
 }

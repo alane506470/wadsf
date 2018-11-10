@@ -16,7 +16,7 @@ public class CategoryDaoImp implements CategoryDao{
 	 @Autowired
 	    private SessionFactory sessionFactory;
 	 
-	 @Transactional
+	
 	public List<Category> selectListByTopId(int topId) {
 		// TODO Auto-generated method stub
 		 return sessionFactory.getCurrentSession().createQuery("from Category where topId="+topId+"order by id desc").list();
@@ -27,9 +27,16 @@ public class CategoryDaoImp implements CategoryDao{
 		return "´ú¸Õservice";
 	}
 
+	@Transactional
 	public List<Category> list() {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createQuery("from Category").list();
+	}
+
+	public Void insertCategory(Category category) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().save(category);
+		return null;
 	}
 
 }
