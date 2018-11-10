@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--  
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+   <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+div
+{
+    height:820px;
+    width:320px;
+    background-image:url("/images/images(1).jpg") ;
+    border:medium;
+    margin:5px;
+    float:left; 
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+<a href="/news">前往目錄</a>
+
+
+<div>
+<h>顯示所有</h>
+<table>
+	<thead>
+		<tr>
+		<th>Name</th>
+		<th>Top_id</th>
+		<th>Date</th>
+		</tr>
+	</thead>
+
+	<tboby>
+	    <tr th:each="c: ${categories}">
+	      <td th:text="${c.name}"></td>
+	      <td th:text="${c.topId}"></td>
+	      <td th:text="${c.startdate}"></td>
+	    </tr>
+	</tboby>
+</table>
+</div>
+
+
+<div>
+<h2>Vertical Headings:categoriesbytopid</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name:</th>
+    <td th:text="${categoriesbytopid.name}"></td>
+  </tr>
+  <tr>
+    <th>topId:</th>
+    <td th:text="${categoriesbytopid.topId}"></td>
+  </tr>
+  <tr>
+    <th>Telephone:</th>
+    <td th:text="${categoriesbytopid.startdate}"></td>
+  </tr>
+</table>
+</div>
+<div>
+<h2>Vertical Headings:categoriesbetween</h2>
+
+<table style="width:100%">
+  <tr th:each="s: ${categoriesbetween}">
+    <th>Name:</th>
+    <td th:text="${s.name}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesbetween}">
+    <th>topId:</th>
+    <td th:text="${s.topId}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesbetween}">
+    <th>Telephone:</th>
+    <td th:text="${s.startdate}"></td>
+  </tr>
+</table>
+</div>
+<div>
+<h2>Vertical Headings:categoriesLessThanEqual</h2>
+<table style="width:100%">
+  <tr th:each="s: ${categoriesLessThanEqual}">
+    <th>Name:</th>
+    <td th:text="${s.name}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesLessThanEqual}">
+    <th>topId:</th>
+    <td th:text="${s.topId}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesLessThanEqual}">
+    <th>Telephone:</th>
+    <td th:text="${s.startdate}"></td>
+  </tr>
+</table>
+</div>
+<div>
+<h2>Vertical Headings:categoriesGreaterThanEqual</h2>
+<table style="width:100%">
+  <tr th:each="s: ${categoriesGreaterThanEqual}">
+    <th>Name:</th>
+    <td th:text="${s.name}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesGreaterThanEqual}">
+    <th>topId:</th>
+    <td th:text="${s.topId}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesGreaterThanEqual}">
+    <th>Telephone:</th>
+    <td th:text="${s.startdate}"></td>
+  </tr>
+</table>
+</div>
+<div>
+<h2>Vertical Headings:categoriesStartdateAfter</h2>
+<table style="width:100%">
+  <tr th:each="s: ${categoriesStartdateAfter}">
+    <th>Name:</th>
+    <td th:text="${s.name}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesStartdateAfter}">
+    <th>topId:</th>
+    <td th:text="${s.topId}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesStartdateAfter}">
+    <th>Telephone:</th>
+    <td th:text="${s.startdate}"></td>
+  </tr>
+</table>
+</div>
+<div>
+<h2>Vertical Headings:categoriesNameLike</h2>
+<table style="width:100%">
+  <tr th:each="s: ${categoriesNameLike}">
+    <th>Name:</th>
+    <td th:text="${s.name}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesNameLike}">
+    <th>topId:</th>
+    <td th:text="${s.topId}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesNameLike}">
+    <th>Telephone:</th>
+    <td th:text="${s.startdate}"></td>
+  </tr>
+</table>
+</div>
+<div>
+<h2>Vertical Headings:categoriesNameContaining</h2>
+<table style="width:100%">
+  <tr th:each="s: ${categoriesNameContaining}">
+    <th>Name:</th>
+    <td th:text="${s.name}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesNameContaining}">
+    <th>topId:</th>
+    <td th:text="${s.topId}"></td>
+  </tr>
+  <tr th:each="s: ${categoriesNameContaining}">
+    <th>Telephone:</th>
+    <td th:text="${s.startdate}"></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
