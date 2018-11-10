@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/category_list.css}" rel="stylesheet"
+	type="text/css" />
+<title>Insert title here</title>
+</head>
+<body>
+	
+		<div id="mainMenu">
+			<div class="grid-container">
+				<div id="logo">
+					<h1>
+						<a href="/login" title="滑新聞">滑新聞</a>
+					</h1>
+				</div>
+				<nav class="main-nav">
+					<ul>
+						<li><a th:href="@{/login}">首頁</a></li>
+						<li><a th:href="@{/inputCategory?(topId=${topId})}">添加類別</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	
+	<div id="main">
+	<div class="grid-container2">
+		<span th:if="${cList.size()}==0">暫無</span>
+		<table>
+			<tr>
+				<th>類別名稱</th>
+				<th>基本操作</th>
+			</tr>
+			<tr th:each="s: ${cList}">
+				<td th:text="${s.name}"></td>
+				<td><a th:href="@{updateInput?(categoryid=${s.id})}">編輯</a> <a
+					th:href="@{delCategory?(categoryid=${s.id},topId=${topId})}">刪除</a>
+				</td>
+
+			</tr>
+
+		</table>
+		</div>
+	</div>
+
+
+</body>
+</html>

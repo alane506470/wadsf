@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>使用者相片瀏覽</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link th:href="@{/css/news.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/index_allnews.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/css/photoList.css}" rel="stylesheet" type="text/css" />
+</head>
+<title>Insert title here</title>
+
+<body>
+	<header id="Mheadeer" style="height: 77px">
+		<div id="topbar">
+			<div class="container">
+				<div id="student">
+					<ul>
+						<li><a href="/categoryAction?topId=1">時政類別管理</a></li>
+						<li><a href="/categoryAction?topId=2">運動類別管理</a></li>
+						<li><a href="/categoryAction?topId=3">娛樂類別管理</a></li>
+						<li><a href="/categoryAction?topId=4">生活類別管理</a></li>
+						<li><a href="/categoryAction?topId=5">健康類別管理</a></li>
+					</ul>
+				</div>
+				<div id="webType">
+					<ul>
+						<li><a href="">English</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div id="mainMenu">
+			<div class="container">
+				<p id="title">凍新聞</p>
+			</div>
+		</div>
+	</header>
+	<div id="innerWrap" style="padding-top: 100px">
+		<div class="container">
+			<!--  
+			<div class="inner_banner2" id="Contentbg1"></div>
+		-->
+			<div id="leftMenu">
+				<h3>新聞</h3>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+
+			</div>
+
+			<div id="content">
+				<div class="path">
+					<span>位置</span>
+					<!--  
+					<a href="/login">新聞中心</a>>><span th:text="${session.topName}"></span>
+				-->
+				</div>
+
+				<h3>相冊</h3>
+
+				<div class="row tab">
+					<div class="col-sm-1">
+						<!-- 
+							<span th:unless="${cList.size()}"><a
+							th:href="@{/prepareUpload?(id=${folderId})}">上傳相片</a></span>
+						 -->
+						<a th:href="@{/prepareUpload?(id=${folderId})}">上傳相片</a>
+					</div>
+				</div>
+
+				<div class="edit">
+					<div class="faq">
+						<ul class="faqList">
+							<li class="black">
+								<p class="faqListTitle">
+									<a href="">相冊名稱</a>
+								</p>
+								<ul class="faqListInner">
+									<span th:if="${cList.size()}==0">暫無</span>
+									<li th:each="s: ${cList}"><!--  相片編號: <span th:text="${s.id}"></span>-->
+										<a th:href="@{/scanPhoto?(id=${s.folderid})}"> <span
+											th:if="${s.photoName.length()}>10"> <span
+												th:text="${#strings.substring({s.photoName},1,10)}">...</span>
+										</span>
+									</a> <span th:unless="${s.photoName.length()}>8"> <span
+											th:text="${s.photoName}"></span>
+									</span> <span th:text="${s.createTime}"></span> <span
+										th:unless="${s.photoInfo.length()}>20"> <span
+											th:text="${s.photoInfo}"></span>
+									</span> <span th:if="${s.photoInfo.length()}>20"> <span
+											th:text="${#strings.substring({s.photoInfo},1,30)}">...</span>
+									</span> <a th:href="@{/preparePhoto?(id=${s.id})}"><img
+											height="50" weight="50" />編輯</a> <a
+										th:href="@{/delPhoto?(id=${s.id})}"><img height="50"
+											weight="50" />刪除</a> <a
+										th:href="@{/prepareUpload?(id=${s.folderid})}">上傳相片</a>
+
+									</li>
+
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+<!--  
+	<a href="/">首頁</a>
+	<br />
+	<p>
+		custom format : <span
+			th:text="${#dates.format(itdragonDate, 'yyyy-MM-dd HH:mm:ss')}" />
+	</p>
+	<span th:unless="${cList.size()}"><a
+		th:href="@{/prepareUpload?(id=${folderId})}">上傳相片</a></span>
+
+
+	<tr th:each="s: ${cList}">
+-->
+		<!-- 
+ 	 <span th:text="${cList.size()}"></span>
+ 	 <td th:text="${s.name}"></td>
+ 	 <td th:text="${s.name.length()}"/>
+ 	 <td th:if="(0)">show</td><br/>
+ 	 
+ 	 <td th:if="${s.name.length()}>8">good</td><br/>
+ 	 <td th:unless="${s.name.length()}>8">not good</td>
+ 	 <td th:text="${#strings.substring('abcdefg',3,5)}"></td>
+ 	 <td th:text="${#strings.substring({s.name},3,5)}"></td>
+ 	 <td>以上是測試</td>
+ 	 <td th:if="${s.name.length()}<8">show</td>
+ 	  <td th:unless="${s.name.length()}>8"></td>
+ 	 
+ 	 <td th:text="${s.startdate}"></td>
+ 	 <span th:text="${#dates.format(itdragonDate, 'yyyy-MM-dd')}"/>
+ 	  <td th:text="${s.content.length()}"></td>
+ 	 
+ 	 -->
+<!--  
+		相片編號:
+		<td th:text="${s.id}"></td>
+
+		<a th:href="@{/scanPhoto?(id=${s.folderid})}"><td
+			th:if="${s.photoName.length()}>10">
+		<td th:text="${#strings.substring({s.photoName},1,10)}" />...
+			</td></a>
+		<br />
+
+		<td th:unless="${s.photoName.length()}>8">
+		<td th:text="${s.photoName}" /></td>
+		<br />
+		<td th:text="${s.createTime}"></td>
+		<br />
+
+		<td th:unless="${s.photoInfo.length()}>20">
+		<td th:text="${s.photoInfo}" /></td>
+		<td th:if="${s.photoInfo.length()}>20">
+		<td th:text="${#strings.substring({s.photoInfo},1,30)}" />...
+		</td>
+
+		<br />
+
+		<td><a th:href="@{/preparePhoto?(id=${s.id})}"><img
+				height="50" weight="50" />編輯</a></td>
+		<td><a th:href="@{/delPhoto?(id=${s.id})}"><img height="50"
+				weight="50" />刪除</a></td>
+		<td><a th:href="@{/prepareUpload?(id=${s.folderid})}">上傳相片</a></td>
+		<br />
+
+
+	</tr>
+-->
+	<footer id="Mfooter">
+		<div class="container">
+			<div class="row">
+				<div class="address">
+					<p>畢業於:銘傳大學-桃園校區 MING CHUAN UNIVERSITY</p>
+					<p>桃園市龜山區大同里德明路 5 號 電話：03-350-7001</p>
+					<p>Phone:0989898989 Fax:0989898989</p>
+				</div>
+				<div class="linkIcon">
+					<ul>
+						<li><a th:href="@{https://www.youtube.com/?gl=TW,hl=zh-tw}">youtube</a>
+						</li>
+						<li><a
+							th:href="@{https://www.facebook.com/profile.php?id=100002748121315}">fb</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<ul>
+					<li><a href="">緊急電話</a></li>
+					<li><a href="">隱私權及資訊安全政策</a></li>
+				</ul>
+				<p>Copyright @2018 陳冠宇 CHEN KUAN YU</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>查看新聞</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/news.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/index_allnews.css}" rel="stylesheet"
+	type="text/css" />
+<link th:href="@{/css/newsList.css}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header id="Mheadeer" style="height: 77px">
+		<div id="topbar">
+			<div class="container">
+				<div id="student">
+					<ul>
+						<li><a href="/categoryAction?topId=1">時政類別管理</a></li>
+						<li><a href="/categoryAction?topId=2">運動類別管理</a></li>
+						<li><a href="/categoryAction?topId=3">娛樂類別管理</a></li>
+						<li><a href="/categoryAction?topId=4">生活類別管理</a></li>
+						<li><a href="/categoryAction?topId=5">健康類別管理</a></li>
+					</ul>
+				</div>
+				<div id="webType">
+					<ul>
+						<li><a href="">English</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div id="mainMenu">
+			<div class="container">
+				<p id="title">凍新聞</p>
+			</div>
+		</div>
+	</header>
+	<!-- 
+	<div id="innerWrap" style="padding-top: 150px;">
+		<div class="container">
+	
+		</div>
+	</div>
+	  -->
+	<div id="innerWrap" style="padding-top: 100px;">
+	  
+		<div class="container">
+		<!--  
+			<div class="inner_banner2" id="Contentbg1"></div>
+		-->
+			<div id="leftMenu">
+				<h3>新聞</h3>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+
+			</div>
+
+			<div id="content">
+				<div class="path">
+					<a href="/login">新聞中心</a>>><span th:text="${session.topName}"></span>
+				</div>
+				<h3>
+					<span th:text="${session.topName}"></span>
+				</h3>
+				<div class="row tab">
+					<div class="col-sm-1">
+					<ul>
+						<li th:each="s: ${session.topName}">
+							<p><span th:text="${s}"></span></p>
+						</li>
+					</ul>
+					</div>
+				</div>
+				<div class="edit">
+					<div class="releaseDate"></div>
+					<h4 class="innerTitle"></h4>
+					<span th:if="${cList.size()}==0">暫無</span>
+					<table class="table table-bordered" style="font-size: 1.2em;">
+						<thead>
+							<tr>
+							<th>標題</th><th>發布時間</th>
+							</tr>
+				
+						</thead>
+						<tbody>
+							<tr th:each="s: ${cList}">
+								<td><a
+									th:href="@{/getNewsById?(newsid=${s.id},signStr='normal')}">
+										<span th:if="${s.title.length()}>10"> <span
+											th:text="${#strings.substring({s.title},0,10)}">...</span>
+									</span> <span th:unless="${s.title.length()}>8"> <span
+											th:text="${s.title}"></span>
+									</span>
+								</a></td>
+								<td th:text="${s.createTime}"></td>
+							</tr>
+						</tbody>
+					</table>
+					當前頁:<span th:text="${pageNumber}" >/</span>
+					總頁數<span th:text="${pageCount}" >頁</span>
+					<a th:href="@{/getNewsList?(pageNo=1,topId=${session.topId})}">首頁</a>
+					<a
+						th:href="@{/getNewsList?(pageNo=${pageNumber}-1,topId=${session.topId})}">上一篇</a>
+					<a
+						th:href="@{/getNewsList?(pageNo=${pageNumber}+1,topId=${session.topId})}">下一篇</a>
+					<a
+						th:href="@{getNewsList?(pageNo=${pageCount},topId=${session.topId})}">尾頁</a>
+				</div>
+			</div>
+		</div>
+	
+
+	</div>
+	 
+
+				<!-- 瀏覽不用操作 
+				<a th:href="@{/getNewsById?(newsid=${s.id},signStr=update,topId=${session.topId})}"><img height="50" weight="50" src=""/>編輯</a>
+		    	--> <!-- 目前無法實現 
+		    	<a th:href="@{/getNewsById?(newsid=${s.id},signStr=delete,topId=${session.topId})}"><img height="50" weight="50" src=""/>刪除</a>
+				-->
+	
+	<footer id="Mfooter">
+		<div class="container">
+			<div class="row">
+				<div class="address">
+					<p>畢業於:銘傳大學-桃園校區 MING CHUAN UNIVERSITY</p>
+					<p>桃園市龜山區大同里德明路 5 號 電話：03-350-7001</p>
+					<p>Phone:0989898989 Fax:0989898989</p>
+				</div>
+				<div class="linkIcon">
+					<ul>
+						<li><a th:href="@{https://www.youtube.com/?gl=TW,hl=zh-tw}">youtube</a>
+						</li>
+						<li><a
+							th:href="@{https://www.facebook.com/profile.php?id=100002748121315}">fb</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<ul>
+					<li><a href="">緊急電話</a></li>
+					<li><a href="">隱私權及資訊安全政策</a></li>
+				</ul>
+				<p>Copyright @2018 陳冠宇 CHEN KUAN YU</p>
+			</div>
+		</div>
+	</footer>
+	
+
+</body>
+</html>

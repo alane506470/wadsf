@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr th:each="s: ${friendList}">
+ 
+    <th>CategoryId:</th>
+    <td th:text="${s.userName}"></td><br/>
+ 
+    <th>CategoryName:</th>
+    <td th:text="${s.sex}"></td><br/>
+    
+    <th>CategoryContent:</th>
+    <td th:text="${s.remark}"></td><br/>
+  
+  	<td>
+   		<a th:href="@{/scanUser?(id=${s.id})}">查看詳細訊息</a>
+   	</td>
+   	
+   	<td>
+   		<a th:href="@{/scanFriendFolder?(id=${s.id})}">瀏覽好友相冊</a>
+   	</td>
+   </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+header{
+	border-bottom: solid 4px #691917;
+	position: fixed;
+	width: 100%;
+	z-index: 999;//所以文本的最前面
+}
+
+header #topbar{
+	height: 26px;
+	font-size: 0.8rem;
+    line-height: 23px;
+    background-color: #691917;
+    border-bottom: solid 2px #F9BE00;
+    display: block;
+}
+header #mainMenu{
+	background-color:black;
+}
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header #topbar #student {
+    box-sizing: border-box;
+    width: 70%;
+    height:100%;
+    float: left;
+    padding-left: 10px;
+}
+ol, ul {
+    list-style: none; //設置一些不同的列表樣式：
+}
+
+header #topbar #student li {
+    color: #fff;
+    display: inline;
+}
+header #topbar #student li a {
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 15px;
+    color: #fff;
+    left: -4px;
+    position: relative;
+    background-color: none;
+}
+#topbar #webType li {
+    float: right;
+    color: #fff;
+    background-color: #000;
+    display: inline;
+    line-height: 22px;
+    margin-top:0.4em;
+}
+#topbar #webType li a {
+    color: #FFF;
+    margin: 0 1em;
+}
+a {
+    text-decoration: none;
+}
+#add {
+        padding-top: 130px;
+        background-color: #000000;
+    position: relative;
+}

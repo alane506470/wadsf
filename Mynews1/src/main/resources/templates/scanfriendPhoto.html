@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+h1 {
+	color:black;
+	font-size:45pt;
+	font-weight:550;
+	font-family:標楷體,超研澤粗行楷;
+	text-align:center;	/*致中*/
+}
+h2 {
+	color:black;
+	font-size:19pt;
+	font-weight:250;
+	font-family:標楷體,超研澤粗行楷;
+	text-align:center;	/*致中*/
+}
+h3 {
+	color:blue;
+	font-size:15pt;
+	font-weight:150;
+	font-family:標楷體,超研澤粗行楷;
+	text-align:center;	/*致中*/
+}
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover {
+    color: black;
+}
+</style>
+
+</head>
+<body>
+<div>
+<tr th:if="${friendphotoList}==null"><font color='red'>暫無相片列表</font>
+</tr>
+<span th:unless="${friendphotoList}==null">
+  <tr th:each="s: ${friendphotoList}">
+ 
+  	<th>PhotoName:</th>
+    <h1><td th:text="${s.photoName}"></td><br/></h1>
+    
+    <th>PhotoPath:</th>
+    <h1><td th:text="${s.photoPath}"></td><br/></h1>
+   
+   	<!--    <img height="250" weight="250" th:src="@{/2018-08-19_5346.jpg}"/>-->
+    <img height="250" weight="250" th:src="@{/(${s.photoPath})}"/>
+    
+    <th>PhotoContent:</th>
+    <h2><td th:text="${s.photoInfo}"></td><br/></h2>
+    
+    <th>PhotoDate:</th>
+    <h3><td th:text="${s.createTime}"></td><br/></h3>
+ 	
+	<a th:href="@{/tocommentPhoto?(id=${s.id},folderid=${s.folderid})}">添加評論</a>
+    
+    <center>
+	    <td><a th:href="@{/scanPhoto?(pageNumber=${pageNumber}-1)}">上一篇</a></td>
+	    <td><a th:href="@{/scanPhoto?(pageNumber=${pageNumber}+1)}">下一篇</a></td>
+	    <td><a th:href="@{/delPhoto?(id=${s.id})}">刪除</a></td>
+	    <td><a th:href="@{/prepareUpload?(id=${s.folderid})}">上傳相片</a></td><br/>
+     </center>
+  	
+  </tr>
+</span>
+</div>
+</body>
+
+</html>

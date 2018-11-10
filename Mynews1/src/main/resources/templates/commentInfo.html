@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+	<tr>
+		<th>評論人</th>
+		<td th:text="${friendName}"></td>
+	</tr>
+	
+	<tr>
+		<th>評論相冊</th>
+		<td th:text="${folderName}"></td>
+	</tr>
+	
+	<tr>
+		<th>用戶相片</th>
+		<td th:text="${photoName}"></td>
+	</tr>
+	
+	<tr>
+		<th>評論內容</th>
+		<td th:text="${content}"></td>
+	</tr>
+	
+	<tr>
+		<th>評論時間</th>
+		<td th:text="${contentTime}"></td>
+	</tr>
+	
+
+
+
+</table>
+
+
+</body>
+</html>

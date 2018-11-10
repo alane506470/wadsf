@@ -1,0 +1,97 @@
+h1, div, body {
+	background-color: #fff;
+	font-family: 'Arimo', 'Open Sans', 'Microsoft JhengHei', sans-serif,
+		Arial, 'Heiti TC', 'LiHei Pro';
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	padding: 10px;
+	border-bottom: solid 4px #691917;
+}
+
+#mainMenu #logo {
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+
+h1 a {
+	/*margin-left: 30px;*/
+	display: block;
+	float: left;
+	margin-top: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a, a:hover {
+	color: #5071ac;
+}
+
+nav {
+	display: block;
+}
+
+.main-nav ul {
+	float: right;
+	margin-top: 63px;
+	margin-right: 30px;
+}
+
+.main-nav li {
+	display: inline-block;
+	font-size: 20px;
+}
+
+li {
+	list-style: none;
+	margin-right: 30px;
+}
+
+/*main*/
+#main {
+	margin-top: 12px;
+	background-position: center bottom;
+	padding-bottom: 60px;
+	border-bottom: #fabe00 4px solid;
+}
+
+.grid-container2 {
+	display: grid;
+	grid-template-columns: auto auto;
+	padding: 10px;
+}
+
+table {
+	border-style: inset green 10pt;
+	font-family: ·L³n¥¿¶ÂÅé;
+	font-size: 26px;
+	width: 500px;
+	border: 1px solid #000;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+#main  th {
+	margin-top: 12px;
+	margin-bottom: 7px;
+	padding-left: 30px;
+}
+
+#main  th {
+	background-color: #A62F0F;
+}
+
+td {
+	border: 1px solid #000;
+}

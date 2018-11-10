@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>註冊</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+<div id="login_frame">
+
+	<form action="register" method="post" th:modelAttribute="user">
+	
+
+		<p>
+			<label class="label_input">帳號</label><input type="text" name="userName" required="required"/>
+		</p>
+		
+		<p>
+			<label class="label_input">密碼</label><input type="password" name="userPassword" required="required"/>
+		</p>
+		
+		<p>
+			<label class="label_input">性別</label>
+			<input type="radio" name="sex"   value="男" checked="checked"/> 男
+			<input type="radio" name="sex"  value="女"/> 女
+		</p>
+		<p>
+			<label class="label_input">生日</label>
+			<select name="birthday">
+            	<option>請選擇生日</option>
+                <option  th:each="list:${session.birthdays}" th:text="${list}"></option>
+            </select>
+      	</p>
+      	<p>
+			<label class="label_input">郵箱地址</label>
+			<input type="text" name="email"/>
+		</p>
+		<p>
+			<label class="label_input">連絡電話</label>
+			<input type="text" name="telephone"/>
+		</p>
+		<p>
+			<label class="label_input">地址</label>
+			<input type="text" name="address"/>
+		</p>
+		<p>
+			<label class="label_input">個人說明</label>
+			<input type="text" name="remark"/>
+		</p>
+		
+			
+		<div id="register_control">	
+			<input type="submit" value="註冊" id="btn_login"/>
+		</div>
+	</form>
+
+</div>
+</body>
+</html>

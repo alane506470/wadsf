@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>修改個人資訊</title>
+</head>
+<body>
+<form action="updateLogin" method="post" th:modelAttribute="user">
+	<table>
+		<tr>
+			<th>帳號</th>
+			<td>
+				<input type="text" name="userName" th:value="${session.user.userName}" required="required"/>
+			</td>
+		</tr>
+      	<tr>
+			<th>郵箱地址</th>
+			<td>
+				<input type="text" name="email" th:value="${session.user.email}" required="required"/>
+			</td>
+		</tr>
+		<tr>
+			<th>連絡電話</th>
+			<td>
+				<input type="text" name="telephone" th:value="${session.user.telephone}" required="required"/>
+			</td>
+		</tr>
+		<tr>
+			<th>地址</th>
+			<td>
+				<input type="text" name="address" th:value="${session.user.address}" required="required"/>
+			</td>
+		</tr>
+		<tr>
+			<th>個人說明</th>
+			<td>
+				<input type="text" name="remark" th:value="${session.user.remark}" required="required"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="hidden" name="signStr" th:value="${signStr}"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="更新"/>
+			</td>
+		</tr>
+		
+	</table>
+</form>
+</body>
+</html>

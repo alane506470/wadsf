@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>首頁</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/news.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/newsList.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header id="Mheadeer" style="height: 77px">
+		<div id="topbar">
+			<div class="container">
+				<div id="student">
+					<ul>
+						<li><a href="/categoryAction?topId=1">時政類別管理</a></li>
+						<li><a href="/categoryAction?topId=2">運動類別管理</a></li>
+						<li><a href="/categoryAction?topId=3">娛樂類別管理</a></li>
+						<li><a href="/categoryAction?topId=4">生活類別管理</a></li>
+						<li><a href="/categoryAction?topId=5">健康類別管理</a></li>
+					</ul>
+				</div>
+				<div id="webType">
+					<ul>
+						<li><a href="">English</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div id="mainMenu">
+			<div class="container">
+
+				<p id="title">凍新聞</p>
+			</div>
+		</div>
+	</header>
+
+	<div id="add"></div>
+	<div id="main">
+		<div class="bg">
+			<div class="container">
+				<div class="col1">
+					<div id="news">
+						<h2>操作列表</h2>
+						<ul>
+							<li>
+								<p>
+									<a th:href="@{/news?(topId=1)}">時政要聞管理</a>
+								</p>
+							</li>
+							<li><p>
+									<a th:href="@{/news?(topId=2)}">運動要聞管理</a>
+								</p></li>
+							<li><p>
+									<a th:href="@{/news?(topId=3)}">娛樂要聞管理</a>
+								</p></li>
+							<li><p>
+									<a th:href="@{/news?(topId=4)}">生活要聞管理</a>
+								</p></li>
+							<li><p>
+									<a href="/categoryAction?topId=5">健康類別管理</a>
+								</p></li>
+							<li><p>
+									<a th:href="@{/news?(topId=5)}">健康要聞管理</a>
+								</p></li>
+							<li><p>
+									<a href="/findAllUsers">所有用戶</a>
+								</p></li>
+							<li><p>
+									<a th:href="@{/findAllFriends?(id=${session.user.id})}">好友</a>
+								</p></li>
+							<li><p>
+									<a href="/createFolder">創建新相冊</a>
+								</p></li>
+							<li><p>
+									<a href="/getNewComment">我的動態</a>
+								</p></li>
+							<li><p>
+									<a href="/getLogin">修改個人密碼</a>
+								</p></li>
+							<li><p>
+									<a th:href="@{/getLogin?(signStr=1)}">修改個人信息</a>
+								</p></li>
+							<li><p>
+									<a href="/exit">離開</a>
+								</p></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col2">
+					<div id="events1">
+						<h2>相冊集</h2>
+
+						<span th:if="${session.allFolderList}==null"> <font
+							color='red'>暫無相片列表</font>
+						</span> <span th:unless="${session.allFolderList}==null"> </span>
+						<ul>
+							<li th:each="s: ${session.allFolderList}">
+								<p>
+									<span th:text="${s.folderName}"></span> <span
+										th:text="${s.folderInfo}"></span> <a
+										th:href="@{/prepareUpload?(id=${s.id})}">上傳相片</a> <a
+										th:href="@{/scanFolder?(id=${s.id})}">查看相冊</a>
+								</p>
+							</li>
+						</ul>
+
+					</div>
+					<div id="events2">
+						<h2>時政新聞</h2>
+						<span th:if="${session.news1}==null"> <font color='red'>暫--------無</font>
+						</span> <span th:unless="${session.news1}==null"> </span>
+						<ul>
+							<li th:each="s: ${session.news1}">
+								<p>
+									[<span th:text="${s.category.name}"></span>] <a
+										th:href="@{getNewsList?(topId=${s.category.topId})}"> <span
+										th:if="${s.title.length()}>10"> <span
+											th:text="${#strings.substring({s.title},1,10)}">...more</span>
+									</span> <span th:unless="${s.title.length()>10}"><span
+											th:text="${s.title}">...more</span></span>
+									</a>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div id="events4">
+						<h2>運動</h2>
+						<span th:if="${session.news2}==null"> <font color='red'>暫--------無</font>
+						</span> <span th:unless="${session.news2}==null"> </span>
+						<ul>
+							<li th:each="s: ${session.news2}">
+								<p>
+									[<span th:text="${s.category.name}"></span>] <a
+										th:href="@{getNewsList?(topId=${s.category.topId})}"> <span
+										th:if="${s.title.length()}>10"> <span
+											th:text="${#strings.substring({s.title},1,10)}">...more</span>
+									</span> <span th:unless="${s.title.length()>10}"><span
+											th:text="${s.title}">...more</span></span>
+									</a>
+								</p>
+							</li>
+						</ul>
+
+					</div>
+					<div id="events3">
+						<h2>娛樂</h2>
+						<span th:if="${session.news3}==null"> <font color='red'>暫--------無</font>
+						</span> <span th:unless="${session.news3}==null"> </span>
+						<ul>
+							<li th:each="s: ${session.news3}">
+								<p>
+									[<span th:text="${s.category.name}"></span>] <a
+										th:href="@{getNewsList?(topId=${s.category.topId})}"> <span
+										th:if="${s.title.length()}>10"> <span
+											th:text="${#strings.substring({s.title},1,10)}">...more</span>
+									</span> <span th:unless="${s.title.length()>10}"><span
+											th:text="${s.title}">...more</span></span>
+									</a>
+								</p>
+							</li>
+						</ul>
+
+					</div>
+					<div id="events5">
+						<h2>生活</h2>
+						<span th:if="${session.news4}==null"> <font color='red'>暫--------無</font>
+						</span> <span th:unless="${session.news4}==null"> </span>
+						<ul>
+							<li th:each="s: ${session.news4}">
+								<p>
+									[<span th:text="${s.category.name}"></span>] <a
+										th:href="@{getNewsList?(topId=${s.category.topId})}"> <span
+										th:if="${s.title.length()}>10"> <span
+											th:text="${#strings.substring({s.title},1,10)}">...more</span>
+									</span> <span th:unless="${s.title.length()>10}"><span
+											th:text="${s.title}">...more</span></span>
+									</a>
+								</p>
+							</li>
+						</ul>
+
+					</div>
+					<div id="events6">
+						<h2>健康</h2>
+						<span th:if="${session.news5}==null"> <font color='red'>暫--------無</font>
+						</span> <span th:unless="${session.news5}==null"> </span>
+						<ul>
+							<li th:each="s: ${session.news5}">
+								<p>
+									[<span th:text="${s.category.name}"></span>] <a
+										th:href="@{getNewsList?(topId=${s.category.topId})}"> <span
+										th:if="${s.title.length()}>10"> <span
+											th:text="${#strings.substring({s.title},1,10)}">...more</span>
+									</span> <span th:unless="${s.title.length()>10}"><span
+											th:text="${s.title}">...more</span></span>
+									</a>
+								</p>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--  
+	<div id="folder">
+
+		<tr th:if="${session.allFolderList}==null">
+			<font color='red'>暫無相片列表</font>
+		</tr>
+		<span th:unless="${session.allFolderList}==null">
+
+			<tr th:each="s: ${session.allFolderList}">
+				<div id="photoList">
+					<p>
+						<th>相冊名稱:</th>
+						<td th:text="${s.folderName}"></td>
+					</p>
+					<p>
+						<th>相冊內容:</th>
+						<td th:text="${s.folderInfo}"></td>
+					</p>
+
+					<a th:href="@{/prepareUpload?(id=${s.id})}">上傳相片</a> <a
+						th:href="@{/scanFolder?(id=${s.id})}">查看相冊</a>
+				</div>
+			</tr>
+		</span>
+	</div>
+-->
+
+	<footer id="Mfooter">
+		<div class="container">
+			<div class="row">
+				<div class="address">
+					<p>畢業於:銘傳大學-桃園校區 MING CHUAN UNIVERSITY</p>
+					<p>桃園市龜山區大同里德明路 5 號 電話：03-350-7001</p>
+					<p>Phone:0989898989 Fax:0989898989</p>
+				</div>
+				<div class="linkIcon">
+					<ul>
+						<li><a th:href="@{https://www.youtube.com/?gl=TW,hl=zh-tw}">youtube</a>
+						</li>
+						<li><a
+							th:href="@{https://www.facebook.com/profile.php?id=100002748121315}">fb</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<ul>
+					<li><a href="">緊急電話</a></li>
+					<li><a href="">隱私權及資訊安全政策</a></li>
+				</ul>
+				<p>Copyright @2018 陳冠宇 CHEN KUAN YU</p>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+</html>

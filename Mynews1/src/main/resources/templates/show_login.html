@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>修改個人資訊</title>
+</head>
+<body>
+<table>
+
+		<tr>
+			<th>帳號</th>
+			<td th:text="${session.user.userName}"></td>
+		</tr>
+		
+		<tr>
+			<th>密碼</th>
+			<td th:text="${session.user.userPassword}"></td>
+		</tr>
+		
+		<tr>
+			<th>性別</th>
+			<td th:text="${session.user.sex}"></td>
+		</tr>
+		<tr>
+			<th>生日</th>
+			<td th:text="${session.user.birthday}"></td>
+      	</tr>
+      	<tr>
+			<th>電話</th>
+			<td th:text="${session.user.telephone}"></td>
+		</tr>
+		<tr>
+			<th>電子信箱</th>
+			<td th:text="${session.user.address}"></td>
+		</tr>
+		<tr>
+			<th>個人介紹</th>
+			<td th:text="${session.user.remark}"></td>
+		</tr>
+		<tr>
+			<a href="/login">首頁</a>
+		</tr>
+</table>
+</body>
+</html>

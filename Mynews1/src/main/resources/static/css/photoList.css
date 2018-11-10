@@ -1,0 +1,153 @@
+#content {
+    width: 75%;
+    padding: 0 1em 0 0;
+    float: right;
+    /* position: relative; */
+    /* font-family: 'Arimo','Open Sans',sans-serif,Heiti TC,"Ä×¶Â Pro","·L³n¥¿¶ÂÅé"; */
+}
+
+.edit {
+    position: relative;
+    /* font-family: 'Arimo','Open Sans',sans-serif,Heiti TC,"Ä×¶Â Pro","·L³n¥¿¶ÂÅé"; */
+    line-height: 180%;
+    padding: 1em;
+    font-size: 0.82em;
+    clear: both;
+    text-align: left;
+}
+
+.faq {
+    position: relative;
+    margin: 1em 0;
+}
+
+.faq .faqList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 250%;
+    text-align: left;
+}
+.faq .faqList li {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    margin: 0 1% 2% 1%;
+    width: 30%;
+    text-align: center;
+    background-color: #ededed;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.faqList .black .faqListTitle {
+    background-color: #333333;
+}
+.faqList .faqListTitle {
+    color: #FFF;
+    font-size: 1.3em;
+    margin: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.faqList .faqListTitle a {
+    color: #FFF;
+}
+.faq .faqList .faqListInner {
+    margin: 0;
+    padding: 0;
+}
+
+
+.faq .faqList .faqListInner li {
+    width: 100%;
+    display: block;
+    border-bottom: 1px dashed #d2d2d2;
+    margin: 0;
+    border-radius: 0;
+}
+footer {
+	border-top: rgba(0, 0, 0, 0.48) 2px solid;
+	background-color: #691917;
+}
+
+footer .row {
+	margin: 0px 24px;
+}
+
+footer .address {
+	padding: 0px;
+	padding-top: 16px;
+	line-height: 1em;
+	font-size: 1.5em;
+}
+
+footer .address p {
+	color: #fff;
+	font-size: 0.85em;
+}
+
+footer .linkIcon {
+	margin: 0px 0px;
+}
+
+footer .linkIcon ul {
+	margin: 18px 0px 18px 0px;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+footer .linkIcon ul li {
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 5px;
+	font-size: 3em;
+}
+
+footer .copyright {
+	font-size: 0.84em;
+	line-height: 40px;
+	height: 40px;
+	background-color: #420200;
+}
+
+footer .copyright ul {
+	margin: 0px 24px;
+}
+
+footer .copyright ul li {
+	display: inline;
+}
+
+footer a {
+	color: #a1605c;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer .copyright ul li:after {
+	content: "|";
+	padding: 0px 10px;
+	color: #a1605c;
+}
+
+footer .copyright ul li:last-child:after {
+	content: "";
+	padding: 0px;
+	color: #a1605c;
+}
+
+footer .copyright p {
+	position: absolute;
+	top: -15px;
+	right: 10px;
+}
+
+footer p {
+	font-size: 0.85em;
+	color: #a1605c;
+}

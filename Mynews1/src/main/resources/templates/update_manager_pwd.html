@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>修改個人密碼</title>
+</head>
+<body>
+<form action="updateLogin" method="post">
+	<table>
+		<tr>
+			<input type="hidden" th:value="${session.user.id}" name="id" />
+		</tr>
+		<tr>
+			<th>原密碼  : </th>
+			<td>
+				<input type="text"  th:value="${session.user.userPassword}"/>
+			</td>
+		</tr>
+		<tr>	
+			<th>新密碼 :</th>
+			<td>
+				<input type="text" name="password" />
+			</td>
+		</tr>
+		<tr>
+			<th>確認密碼 :</th>
+			<td>
+				<input type="text" name="newpwd" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="提交"/>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

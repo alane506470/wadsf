@@ -1,0 +1,175 @@
+body {
+	background-color: #fff;
+	font-family: 'Arimo', 'Open Sans', 'Microsoft JhengHei', sans-serif,
+		Arial, 'Heiti TC', 'LiHei Pro';
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+.grid-container {
+	display: grid;
+	padding: 10px;
+	border-bottom: solid 4px #691917;
+}
+
+#mainMenu #logo {
+	font-weight: bold;
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+
+#mainMenu #time {
+	position: absolute;
+	bottom: 10px;
+	right: 13px;
+}
+
+#main {
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+#main .bg {
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	padding-bottom: 40px;
+	border-bottom: #fabe00 4px solid;
+}
+
+.container {
+	position: relative;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main .col1 {
+	box-sizing: border-box; //
+	在元素的總寬度和高度中包含填充和邊框 width: 100%; //
+	定義包含塊的寬度（以百分比表示） padding-left: 1%; //
+	內距 padding-right: 1%;
+}
+
+#main h2 {
+	margin-top: 12px; //
+	外距 margin-bottom: 7px;
+	padding-left: 30px;
+	background-color: #333333;
+}
+
+#main h2 a {
+	color: white;
+}
+
+table {
+	font-family: 微軟正黑體;
+	font-size: 26px;
+	text-align: center;
+	height: auto;
+	border-collapse: collapse;
+}
+
+th {
+	margin-top: 12px;
+	margin-bottom: 7px;
+	padding-left: 30px;
+}
+
+th {
+	background-color: #A62F0F;
+}
+
+td {
+	border: 1px solid #000;
+}
+
+footer {
+	border-top: rgba(0, 0, 0, 0.48) 2px solid;
+	background-color: #691917;
+}
+
+footer .row {
+	margin: 0px 24px;
+}
+
+footer .address {
+	padding: 0px;
+	padding-top: 16px;
+	line-height: 1em;
+	font-size: 1.5em;
+}
+
+footer .address p {
+	color: #fff;
+	font-size: 0.85em;
+}
+
+footer .linkIcon {
+	margin: 0px 0px;
+}
+
+footer .linkIcon ul {
+	margin: 18px 0px 18px 0px;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+footer .linkIcon ul li {
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 5px;
+	font-size: 3em;
+}
+
+footer .copyright {
+	font-size: 0.84em;
+	line-height: 40px;
+	height: 40px;
+	background-color: #420200;
+}
+
+footer .copyright ul {
+	margin: 0px 24px;
+}
+
+footer .copyright ul li {
+	display: inline;
+}
+
+footer a {
+	color: #a1605c;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer .copyright ul li:after {
+	content: "|";
+	padding: 0px 10px;
+	color: #a1605c;
+}
+
+footer .copyright ul li:last-child:after {
+	content: "";
+	padding: 0px;
+	color: #a1605c;
+}
+
+footer .copyright p {
+	position: absolute;
+	top: -15px;
+	right: 10px;
+}
+
+footer p {
+	font-size: 0.85em;
+	color: #a1605c;
+}

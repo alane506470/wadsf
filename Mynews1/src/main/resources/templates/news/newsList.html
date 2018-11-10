@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/newsList.css}" rel="stylesheet" type="text/css" />
+</head>
+<title>Insert title here</title>
+
+<body>
+	<div id="mainMenu">
+		<div class="grid-container">
+			<div id="logo">
+				你當前的位置:[新聞中心]--[<span th:text="${session.topName}"></span>]--<a
+					href="/login">首頁</a>
+			</div>
+			<div id="time">
+				現在時間:<span
+					th:text="${#dates.format(itdragonDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+		<div class="bg">
+			<div class="container">
+				<div class="col1">
+					<h2>
+						<a th:href="@{/addInputNews?(topId=${session.topId})}">發佈新聞</a>
+					</h2>
+					<span th:if="${cList.size()}==0">暫無</span>
+
+					<table>
+						<tr>
+							<td>標題</td>
+							<td>發布時間</td>
+							<td>內容</td>
+							<td>詳細類別</td>
+							<td>基本操作</td>
+						</tr>
+						<tr th:each="s: ${cList}">
+
+							<!-- 
+		 	 <span th:text="${cList.size()}"></span>
+		 	 <td th:text="${s.name}"></td>
+		 	 <td th:text="${s.name.length()}"/>
+		 	 <td th:if="(0)">show</td><br/>
+		 	 
+		 	 <td th:if="${s.name.length()}>8">good</td><br/>
+		 	 <td th:unless="${s.name.length()}>8">not good</td>
+		 	 <td th:text="${#strings.substring('abcdefg',3,5)}"></td>
+		 	 <td th:text="${#strings.substring({s.name},3,5)}"></td>
+		 	 <td>以上是測試</td>
+		 	 <td th:if="${s.name.length()}<8">show</td>
+		 	  <td th:unless="${s.name.length()}>8"></td>
+		 	 
+		 	 <td th:text="${s.startdate}"></td>
+		 	 <span th:text="${#dates.format(itdragonDate, 'yyyy-MM-dd')}"/>
+		 	  <td th:text="${s.content.length()}"></td>
+		 	 
+		 	 -->
+							<td><a th:href="@{/getNewsById?(newsid=${s.id})}"> <span
+									th:if="${s.title.length()}>10"> <span
+										th:text="${#strings.substring({s.title},1,10)}" />...
+
+								</span> <span th:unless="${s.title.length()}>8"> <span
+										th:text="${s.title}" />
+								</span>
+							</a></td>
+
+							<td th:text="${s.createTime}"></td>
+
+							<td><span th:unless="${s.content.length()}>15"> <span
+									th:text="${s.content}" />
+							</span> <span th:if="${s.content.length()}>15"> <span
+									th:text="${#strings.substring({s.content},1,30)}" />...
+							</span></td>
+
+							<td th:text="${s.category.name}"></td>
+							<td><a
+								th:href="@{/getNewsById?(newsid=${s.id},signStr=update,topId=${session.topId})}"><img
+									height="50" weight="50" src="" />編輯</a> <!-- 目前無法實現 
+		    	<a th:href="@{/getNewsById?(newsid=${s.id},signStr=delete,topId=${session.topId})}"><img height="50" weight="50" src=""/>刪除</a>
+				--></td>
+						</tr>
+					</table>
+
+					當前頁:
+					<td th:text="${pageNumber}" />/
+					<td th:text="${pageCount}" />頁 <a
+						th:href="@{/news?(pageNo=1,topId=${topId})}">首頁</a> <a
+						th:href="@{/news?(pageNo=${pageNumber}-1,topId=${topId})}">上一篇</a>
+					<a th:href="@{/news?(pageNo=${pageNumber}+1,topId=${topId})}">下一篇</a>
+					<a th:href="@{news?(pageNo=${pageCount},topId=${topId})}">尾頁</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="Mfooter">
+		<div class="container">
+			<div class="row">
+				<div class="address">
+					<p>畢業於:銘傳大學-桃園校區 MING CHUAN UNIVERSITY</p>
+					<p>桃園市龜山區大同里德明路 5 號 電話：03-350-7001</p>
+					<p>Phone:0989898989 Fax:0989898989</p>
+				</div>
+				<div class="linkIcon">
+					<ul>
+						<li><a th:href="@{https://www.youtube.com/?gl=TW,hl=zh-tw}">youtube</a>
+						</li>
+						<li><a
+							th:href="@{https://www.facebook.com/profile.php?id=100002748121315}">fb</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<ul>
+					<li><a href="">緊急電話</a></li>
+					<li><a href="">隱私權及資訊安全政策</a></li>
+				</ul>
+				<p>Copyright @2018 陳冠宇 CHEN KUAN YU</p>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+</html>

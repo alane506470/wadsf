@@ -1,0 +1,40 @@
+body {
+    background-image: url("/loginBac.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#userlist_frame {
+    width: 80%; /*範圍長寬*/
+	height: auto;
+	overflow: auto;
+	position: relative; /*位子*/ margin : auto; /*剩餘的寬度平均的散落在左右兩邊的邊距上*/
+	padding : 10px; /*內距*/
+	background-color: rgba(25, 255, 255, 0.5); /*背景顏色*/
+	border-radius: 50px;
+	margin: auto; /*剩餘的寬度平均的散落在左右兩邊的邊距上*/
+	padding: 10px; /*圓角效果*/
+}
+
+#title_list{
+	 width: 820px;
+    height: 40px;
+    position: absolute;		/*位子*/
+    left: 24%;
+    top: 40%;
+     margin-left: -200px;
+    margin-top: -224px;
+     background-color: rgba(255, 97, 0, 0.5);	
+    
+}
+
+#users{
+	 
+    position: absolute;		/*位子*/
+    left: 24%;
+    top: 40%;
+     margin-left: -200px;
+    margin-top: -224px;
+     background-color: rgba(255, 97, 0, 0.5);	
+    
+}

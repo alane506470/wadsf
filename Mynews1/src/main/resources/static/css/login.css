@@ -1,0 +1,97 @@
+/*
+body {
+    background-image: url("/loginBac.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+ */
+#login_frame {
+    width: 1000px; /*範圍長寬*/
+	height: auto;
+	overflow: auto;
+	position: relative; /*位子*/ margin : auto; /*剩餘的寬度平均的散落在左右兩邊的邊距上*/
+	padding : 10px; /*內距*/
+	background-color: rgba(25, 255, 255, 0.5); /*背景顏色*/
+	border-radius: 50px;
+	margin: auto; /*剩餘的寬度平均的散落在左右兩邊的邊距上*/
+	padding: 10px; /*圓角效果*/
+}
+ 
+form p > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+#image_logo {
+	overflow:auto;
+	margin:0% 35%;
+	text-align: center;	/*內容置中*/
+   	/*  margin-top(上邊界)margin-right (右邊界) margin-bottom (下邊界) margin-left (左邊界) */ 
+}
+ 
+.label_input {
+    font-size: 14px;
+    font-family: 宋体;
+ 
+    width: 20%;		/*範圍長寬*/
+    height: 28px;
+    line-height: 28px;	/*行高*/
+    text-align: center;	/*內容置中*/
+ 
+    color: white;		/*字體顏色*/
+    background-color: rgba(255, 150, 255, 0.5);	/*背景顏色*/
+    border-top-left-radius: 5px;		/*左上-圓角效果*/
+    border-bottom-left-radius: 5px;		/*左下-圓角效果*/
+}
+ 
+.text_field {
+    width: 80%;
+    height: 28px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+}
+ 
+#btn_login {
+    font-size: 14px;
+    font-family: 宋体;
+ 
+    width: 120px;
+    height: 28px;
+   
+    text-align: center;
+ 
+    color: white;
+    background-color: #3BD9FF;
+    border-radius: 6px;
+    border: 0;
+ 
+    float: left;
+}
+
+#btn_login:hover {
+    color: blue;
+}
+#register_pwd {
+	width: 120px;
+    height: 28px;
+    font-size: 14px;
+    font-family: 宋体;
+    line-height: 28px;	/*行距很重要*/
+    
+    color: white;
+    background-color: #3BD9FF;
+    
+    text-align: center;
+    border-radius: 6px;
+    border: 0;
+   
+    float: right;
+    
+ 
+}
+ 
+#register_pwd:hover {
+    color: blue;
+    text-decoration: underline;
+}

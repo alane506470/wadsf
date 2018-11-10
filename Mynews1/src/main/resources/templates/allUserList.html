@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<link th:href="@{/css/userList.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<div id="userlist_frame">
+		<table>
+
+			<tr>
+				<th>姓名</th>
+				<th>性別</th>
+				<th>自我介紹</th>
+				<th>個人資訊</th>
+				<th>添加好友</th>
+			</tr>
+
+			<tr th:each="s: ${session.allUserList}">
+
+				<p>
+				<td th:text="${s.userName}"></td>
+
+
+
+				<td th:text="${s.sex}"></td>
+
+
+
+				<td th:text="${s.remark}"></td>
+
+
+				<td><a th:href="@{/scanUser?(id=${s.id})}">查看詳細訊息</a></td>
+				<td><a th:href="@{/addFriend?(id=${s.id})}">添加好友</a></td>
+				</p>
+			</tr>
+		</table>
+	</div>
+
+
+</body>
+</html>

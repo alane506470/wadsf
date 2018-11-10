@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+div
+{
+    height:auto;
+    width:auto;
+    background-color:aquamarine;
+    border:medium;
+    margin:auto;
+    float:left; 
+}
+</style>
+
+</head>
+<a href="/">首頁</a>
+<body>
+<div>新增時政類別</div><p/>
+<a th:href="@{news?(topId=${session.topId})}">返回[<span th:text="${session.topId}"/>]</a>
+<form action="addNews" method="post" th:modelAttribute="news">
+	<table>
+	<tr>
+		<td>
+			新聞標題:<input type="text" name="title"/><p/>
+		</td>
+		<td>
+			<label class="label_input">新聞類別</label>
+			<select name="cid">
+            	<option>請選擇新聞類別</option>
+                <option  th:each="list:${cList}" th:text="${list.name}" th:value="${list.id}"></option>
+            </select>
+		</td>
+		<td>
+			新聞內容:<textarea rows="10" cols="30" name="content"></textarea><p/>
+		</td>
+		<td>
+			<button type="submit">發佈</button>
+		</td>
+	</tr>
+	</table>
+</form>
+</body>
+</html>

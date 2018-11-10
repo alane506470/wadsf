@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table>
+	<tr>
+		<th>相片名稱:</th>
+		<td th:text="${photo.photoName}"></td><p/>
+	</tr>
+	<tr>
+		<th>圖片:</th>
+		<td><img height="250" weight="250" th:src="@{/(${photo.photoPath})}"/></td><p/>
+	</tr>
+	<tr>
+		<th>上傳時間:</th>
+		<td th:text="${photo.createTime}"></td><p/>
+	</tr>
+</table>
+
+
+	<form action="addcomment" method="post">
+		<input type="hidden" th:value="${photo.id}" name="id"/>
+		<input type="hidden" th:value="${photo.folderid}" name="folderid"/>
+		評論:<textarea row="30" cols="40" name="content"></textarea>
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>

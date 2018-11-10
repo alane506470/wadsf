@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+div
+{
+    height:auto;
+    width:auto;
+    background-color:aquamarine;
+    border:medium;
+    margin:auto;
+    float:left; 
+}
+</style>
+
+</head>
+<a href="/">首頁</a>
+<body>
+<div>新增相冊</div><p/>
+
+<form action="addFolder" method="post" th:modelAttribute="folder">
+	<table>
+	<tr>
+		<td>
+			相冊名稱:<input type="text" name="folderName"/><p/>
+		</td>
+		
+		<td>
+			相冊說明:<textarea rows="10" cols="30" name="folderInfo"></textarea><p/>
+		</td>
+	
+		<td>
+			<select name="limitid">
+            	<option value="0">允許所有人訪問</option>
+                <option value="1" selected="selected">只允許好友訪問</option>
+				<option value="2">不允許任何人訪問</option>
+            </select>
+		</td>
+		
+		<td>
+			<button type="submit">添加</button>
+		</td>
+	</tr>
+	</table>
+</form>
+</body>
+</html>

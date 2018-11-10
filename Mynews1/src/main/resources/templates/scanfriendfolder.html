@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>首頁</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css" />
+     <link th:href="@{/css/news.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+		<tr th:if="${session.friendFolderList}==null"><font color='red'>暫無相片列表</font>
+		</tr>
+		<span th:unless="${session.friendFolderList}==null">
+		 <p>	
+			 <tr th:each="s: ${session.friendFolderList}">
+			 	<p>
+				    <th>相冊名稱:</th>
+				   <td th:text="${s.folderName}"></td>
+				</p> 
+				<p>
+					<th>相冊內容:</th>
+				    <td th:text="${s.folderInfo}"></td>
+				</p> 
+				   
+				     <a  th:href="@{/scanFriendPhotos?(id=${s.id})}">查看相冊</a>
+				 
+			  </tr>
+		  </p>
+	 	</span>
+</body>
+</html>

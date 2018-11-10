@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="multipart/form-data; charset=UTF-8" /> 
+    <style type="text/css">
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+div
+{
+    height:auto;
+    width:auto;
+    background-color:aquamarine;
+    border:medium;
+    margin:auto;
+    float:left; 
+}
+</style>
+
+</head>
+<body>
+<form action="upload" method="post" th:modelAttribute="photo" enctype="multipart/form-data">
+	<table>
+	<tr>
+		<td>
+			照片名稱:<input type="text" name="photoName"/><p/>
+		</td>
+		
+		<td>
+			照片內容:<textarea rows="10" cols="20" name="photoInfo"></textarea><p/>
+		</td>
+		<td>
+			<input type="hidden" th:value="${folderid}" name="folderid"/>
+		</td>
+		<td>
+			<input type="file" name="file" label="選擇相片"/><p/>
+		</td>
+		
+		<td>
+			<button type="submit">添加</button>
+		</td>
+	</tr>
+	</table>
+</form>
+</body>
+</html>

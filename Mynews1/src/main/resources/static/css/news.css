@@ -1,0 +1,322 @@
+* {
+   
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+div,body,header,ul,li{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+header{
+	border-bottom: solid 4px #691917;
+	position: fixed;
+	width: 100%;
+	z-index: 999;//所以文本的最前面
+}
+
+header #topbar{
+	height: 26px;
+	font-size: 0.8rem;
+    line-height: 23px;
+    background-color: #691917;
+    border-bottom: solid 2px #F9BE00;
+    display: block;
+}
+header #mainMenu{
+	background-color:black;
+}
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header #topbar #student {
+    box-sizing: border-box;
+    width: 70%;
+    height:100%;
+    float: left;
+    padding-left: 10px;
+}
+ol, ul {
+    list-style: none; //設置一些不同的列表樣式：
+}
+
+header #topbar #student li {
+    color: #fff;
+    display: inline;
+}
+header #topbar #student li a {
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 15px;
+    color: #fff;
+    left: -4px;
+    position: relative;
+    background-color: none;
+}
+#topbar #webType li {
+    float: right;
+    color: #fff;
+    background-color: #000;
+    display: inline;
+    line-height: 22px;
+    margin-top:0.4em;
+}
+#topbar #webType li a {
+    color: #FFF;
+    margin: 0 1em;
+}
+a {
+    text-decoration: none;
+}
+#add {
+        padding-top: 130px;
+        background-color: #000000;
+    position: relative;
+}
+
+#main {
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	
+}
+
+#main .bg {
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	padding-bottom: 40px;
+	border-bottom: #fabe00 4px solid;
+	height:1000px;
+}
+.container {
+	position: relative;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#main  .col1 {
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+#main h2 {/*背景位子*/
+    background-position: 4px 2px;
+    background-repeat: no-repeat;
+    background-size: 21px 20px;
+}
+#main  h2 {	/*所有標題位子*/
+    margin-top: 12px;
+    margin-bottom: 7px;
+    padding-left: 20px;
+}
+#main div h2 {/*顏色，內距*/
+    color: #FFF;
+    padding: 6px 10px;
+    position: relative;
+}
+#main #news h2 {
+    background-color: #333333;
+}
+#main  .col1 #news ul {
+    height: 955px;
+}
+#main #news ul li {
+    border-bottom: dashed 1px #b1b1b1;
+    line-height: 0.7em;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+#main #news p {
+    border-left-color: #333333;
+}
+#main li p {
+    font-size: 0.82em;
+    border-left: solid 5px #333333;
+    padding-left: 12px;
+}
+
+#main .col2{
+	box-sizing: border-box;
+    width: 66.66667%;
+    float: right;
+    padding-left: 0%;
+    padding-right: 1%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+#main .col2 #events1 {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    float: left;
+}
+#main #events1 h2 {
+    background-color: #A62F0F;
+}
+
+#main .col2 #events2{
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: relative;
+}
+
+#main #events1 ul li {
+    line-height: 0.1em;
+}
+#main .col2 div ul li {
+    width: 100%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#main #events2 h2 {
+    background-color: #01888E;
+}
+#main  .col2 #events2 ul li {
+    width: 45%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#main .col2 #events4 {
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#main #events4 h2 {
+    background-color: #DF8E01;
+}
+#main  .col2 #events4 ul li {
+    width: 45%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#main .col2 #events3 {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: relative;
+}
+#main #events3 h2 {
+    background-color: #003D5C;
+}
+#main  .col2 #events3 ul li {
+    width: 45%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#main .col2 #events5 {
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+#main #events5 h2 {
+    background-color: #178153;
+}
+#main  .col2 #events5 ul li {
+    width: 45%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#main .col2 #events6 {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+#main #events6 h2 {
+    background-color: #770077;
+}
+#main  .col2 #events6 ul li {
+    width: 45%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+header #title {
+	
+	position: relative; /*位子*/
+	font-size: 40px;
+	font-family: 宋体;
+	color: rgba(255, 255, 255);
+	margin: auto;
+}
+/*以下沒用*/
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+
+#news_list {
+	margin: 0;
+	padding: 10px;
+	overflow: hidden;
+	background-color: rgba(41, 36, 33);
+}
+
+#users_list {
+	width: 200px;
+	margin: 0; padding : 10px;
+	float: left;
+	background-color: rgba(200, 36, 33);
+	padding: 10px;
+}
+
+#folder {
+	margin: 0;
+	width: 75%;
+	float: left;
+}
+
+#photoList{
+	width: 25%;
+	float: left;
+}
+ul.a {
+	list-style-type: circle;
+	color: white;
+	text-decoration: none;
+}
+
+li1 a {
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li1 a:hover {
+	background-color: #111;
+	text-decoration: none;
+}

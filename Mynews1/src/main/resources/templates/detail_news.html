@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<title>Insert title here</title>
+
+<body>
+<p>你當前的位置:[新聞中心]-[<span th:text="${session.topName}"/>]-[新聞詳情]</p>
+新聞標題:<span th:text="${news.title}"/>
+<a th:href="@{news?(topId=${session.topId})}">
+	返回[<span th:text="${session.topName}"/>]
+</a>
+
+<table>
+	<tr>
+		<td>新聞類別 :</td>
+		<td th:text="${news.category.name}"></td>
+	</tr>
+	<tr>
+		<td>新聞內容 :</td>
+		<td th:text="${news.content}"></td>
+	</tr>
+	<tr>
+		<td>發布時間 :</td>
+		<td th:text="${news.createTime}"></td>
+	</tr>
+</table>
+
+</body>
+</html>

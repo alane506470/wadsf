@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Insert title here</title>
+</head>
+<body>
+<form action="updatePhoto" method="post" th:modelAttribute="photo">
+	<table>
+	<tr>
+		<td>
+
+			相片名稱:<input type="text" th:value="${photo.photoName}" name="photoName"/>
+		</td><p/>
+		
+		<td>
+			內容:<textarea rows="30" cols="30" th:value="${photo.photoInfo}" name="photoInfo">
+		 <span th:text="${photo.photoInfo}"></span></textarea></td><p/>
+		
+		<td>
+			<button type="submit">確認修改</button>
+		</td>
+	</tr>
+	</table>
+</form>
+</body>
+</html>

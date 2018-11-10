@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<tr th:each="s: ${session.commentList}">
+ 
+    <th>PhotoId:</th>
+    <h1><td th:text="${s.photo_comment}"></td><br/></h1>
+ 
+    <th>PhotoName:</th>
+    <h1><td th:text="${s.comment_time}"></td><br/></h1>
+    <a th:href="@{/scancomment?(id=${s.id})}">查看評論</a>
+    <a th:href="@{/delcomment?(id=${s.id})}">刪除</a>
+</tr>
+</body>
+</html>
