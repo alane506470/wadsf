@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd" >
+<struts>
+<package name = "usernameagersystem" extends = "struts-default" >
+    <interceptors>
+    	<interceptor name="initdata" class="com.usernameagersystem.Interceptor.GetAllUserInterceptor"></interceptor>
+    	<interceptor-stack name="init_interceptor">
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+    		<interceptor-ref name="initdata"></interceptor-ref>
+    	</interceptor-stack>
+    </interceptors>
+    
+    <action name ="login" class = "com.usernameagersystem.actions.UserLoginAction" >
+         <result>/index.jsp</result>
+         <result name = "input">/login.jsp</result>
+      </action>
+      
+    <action name ="scan" class = "com.usernameagersystem.actions.UserScanAction" >
+         <result>/userinfo.jsp</result>
+         <result name = "input">/login.jsp</result>
+      </action>
+   
+      <action name ="getallusers" class = "com.usernameagersystem.actions.GetAllUsersAction" >
+         <result name="userselect">/main.jsp</result>
+         <result name = "adminselect">/adminselectuser.jsp</result>
+      </action>
+      
+       <action name ="modifydispatch" class = "com.usernameagersystem.actions.ModifyDispatchAction" >
+         <result name="usermodify">/usermodify.jsp</result>
+         <result name = "othersmodify">/othersmodify.jsp</result>
+             <result name = "input">/login.jsp</result>
+      </action>
+ 
+      <action name ="modifyuser" class = "com.usernameagersystem.actions.UserModifyAction" >
+         <result name="success">/modify_user_success.jsp</result>
+         <result name = "error">/modify_user_error.jsp</result>
+      </action>
+           
+ 
+      
+      <action name ="deleteuser" class = "com.usernameagersystem.actions.AdminDeleteUserAction" >
+         	<result name="success">/index.jsp</result>
+       		<result name="failure">/failure.jsp</result>
+       
+      </action>
+      
+      <action name ="ifcanadd" class = "com.usernameagersystem.actions.IfCanAddUser" >
+         <result name="success">/addUser.jsp</result>
+          <result name="failure">/failure.jsp</result>
+      </action>
+     
+      <action name ="adduser" class = "com.usernameagersystem.actions.AddUserAction" >
+         <result name="success">/adduser_success.jsp</result>
+          <result name="input">/addUser.jsp</result>
+      </action>
+      
+     
+       <action name ="selectalladmin" class = "com.usernameagersystem.actions.AdminSelectAllAdminsAction" >
+         <result name="smalladmin">/showadmins.jsp</result>
+          <result name="bigadmin">/selectAllAdmins.jsp</result>
+           <result name="failure">/failure.jsp</result>
+      </action>
+      
+      <action name ="selectnewuser" class = "com.usernameagersystem.actions.AdminFindNewUsersAction" >
+         <result>/newuserlist.jsp</result>
+           <result name="failure">/failure.jsp</result>
+      </action>
+      
+    
+       <action name ="deleteadmin" class = "com.usernameagersystem.actions.AdminDeleteAdminAction" >
+         <result>/failure.jsp</result>
+      </action>
+      
+       <action name ="getdata" class = "com.usernameagersystem.actions.AdminGetDataAction" >
+         <result >/adminmodify.jsp</result>
+      </action>
+      
+       <action name ="modifyadmin" class = "com.usernameagersystem.actions.AdminModifyAction" >
+         <result >/selectAllAdmins.jsp</result>
+      </action>
+      
+       <action name ="addadmin" class = "com.usernameagersystem.actions.AddAdminAction" >
+         <result >/addadmin_success.jsp</result>
+         <result name="input">/AddAdmin.jsp</result>
+      </action>
+
+</package>
+
+</struts>
